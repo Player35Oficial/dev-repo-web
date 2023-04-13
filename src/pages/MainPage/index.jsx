@@ -9,6 +9,8 @@ const userId = "6432d2907e85c628f1f194c4";
 
 export default function MainPage() {
   const [repositories, setRepositories] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [loadingError, setLoadingError] = useState(false);
 
   const loadData = async (query = "") => {
     const response = await getRepositories(userId);
